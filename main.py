@@ -37,8 +37,8 @@ def get_current():
         response = requests.get(WEB_URL(CURRENT), headers=headers)
         if response.content.decode() != '':
             auth["id"] = json.loads(response.content.decode())["id"]
-            fin_seat()
-
+            fin_seat() 
+            
 def occ_seat():
     global ENDTIME
     for auth in Author:
