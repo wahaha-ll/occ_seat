@@ -10,7 +10,7 @@ name: occ_seat
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "50 5 * * *"
   
 
 permissions:
