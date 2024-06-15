@@ -16,7 +16,7 @@ on:
 
 permissions:
   contents: read
-
+  
 jobs:
   occ_seat:
     runs-on: ubuntu-latest
