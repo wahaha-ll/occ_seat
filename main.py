@@ -45,15 +45,9 @@ def occ_seat():
         headers["Authorization"] = auth["name"]
         json_data["use"]["resourceId"] = auth["resourceId"]
         json_data["device"]["deviceMac"] = auth["deviceMac"]
-        try:
-            response = requests.post(WEB_URL(USE), headers=headers, json=json_data["use"])
-        except:
-            pass
+        response = requests.post(WEB_URL(USE), headers=headers, json=json_data["use"])
         content = json.loads(response.content.decode())
-        try:
-            requests.post(WEB_URL(DEVICE),headers=headers, json=json_data["device"])
-        except:
-            pass
+        requests.post(WEB_URL(DEVICE),headers=headers, json=json_data["device"])
         auth["id"] = content["id"]
         ENDTIME = content["endTime"]
 
@@ -61,10 +55,7 @@ def fin_seat():
     global ENDTIME
     for auth in Author:
         headers["Authorization"] = auth["name"]
-        try:
-            requests.post(WEB_URL(FINISH(auth["id"])), headers=headers)
-        except:
-            pass
+        requests.post(WEB_URL(FINISH(auth["id"])), headers=headers)
         ENDTIME = 0
 
 if "__main__" == __name__:
