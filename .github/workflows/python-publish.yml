@@ -32,5 +32,5 @@ jobs:
           architecture: 'x64'
 
       - name: Display Python version
-        run: python -c "import requests; print("Hello world")"
+        run: python -c "print("Hello world")"
     
