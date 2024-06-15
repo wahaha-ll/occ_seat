@@ -1,3 +1,3 @@
 import requests
 
-requests.get("https://www.baidu.com")
+print("Hello wolrd")
