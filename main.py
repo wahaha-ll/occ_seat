@@ -1,3 +1,3 @@
 import requests
 
-requests.get("https://pro.lceda.cn/editor")
+requests.get("https://http://www.moe.gov.cn/")
