@@ -35,10 +35,11 @@ def get_current():
     for auth in Author:
         headers["Authorization"] = auth["name"] 
         response = requests.get(WEB_URL(CURRENT), headers=headers)
+        print(response.content)
         if response.content.decode() != '':
             auth["id"] = json.loads(response.content.decode())["id"]
-            fin_seat() 
-            
+            fin_seat()
+
 def occ_seat():
     global ENDTIME
     for auth in Author:
@@ -46,8 +47,10 @@ def occ_seat():
         json_data["use"]["resourceId"] = auth["resourceId"]
         json_data["device"]["deviceMac"] = auth["deviceMac"]
         response = requests.post(WEB_URL(USE), headers=headers, json=json_data["use"])
+        print(response.content)
         content = json.loads(response.content.decode())
         requests.post(WEB_URL(DEVICE),headers=headers, json=json_data["device"])
+        print(response.content)
         auth["id"] = content["id"]
         ENDTIME = content["endTime"]
 
@@ -56,6 +59,7 @@ def fin_seat():
     for auth in Author:
         headers["Authorization"] = auth["name"]
         requests.post(WEB_URL(FINISH(auth["id"])), headers=headers)
+        print(response.content)
         ENDTIME = 0
 
 if "__main__" == __name__:
