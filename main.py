@@ -1,4 +1,4 @@
 import requests
 
 
-requests.get("https://www.baidu.com")
+requests.get("https://www.github.com")
