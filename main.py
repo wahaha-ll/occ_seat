@@ -1,3 +1,3 @@
 import requests
 
-requests.get("https://www.baidu.com/")
+requests.get("https://pro.lceda.cn/editor")
