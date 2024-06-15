@@ -1,3 +1,3 @@
 import requests
 
-requests.get("https://www.bilibili.com/")
+requests.get("https://www.baidu.com/")
