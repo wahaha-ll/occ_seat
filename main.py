@@ -59,15 +59,4 @@ def fin_seat():
     for auth in Author:
         headers["Authorization"] = auth["name"]
         requests.post(WEB_URL(FINISH(auth["id"])), headers=headers)
-        print(response.content)
         ENDTIME = 0
-
-if "__main__" == __name__:
-    get_current()
-    while True:
-        if ENDTIME == 0 and 22 >= time.localtime().tm_hour >= 8:
-            occ_seat()
-        elif ENDTIME <= time.time()*1000-1000:
-            fin_seat()
-        elif time.localtime().tm_hour > 22:
-            fin_seat()
