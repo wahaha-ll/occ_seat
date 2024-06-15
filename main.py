@@ -55,10 +55,4 @@ def fin_seat():
         # auth["id"] = content["id"]
         ENDTIME = 0
 
-fin_seat()
-
-while True:
-    if ENDTIME == 0 and 24 >= time.localtime().tm_hour >= 8:
-        occ_seat()
-    elif ENDTIME <= time.time()*1000-1000:
-        fin_seat()
+occ_seat()
