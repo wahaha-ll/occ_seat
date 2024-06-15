@@ -1,5 +1,5 @@
 import requests
 
-response = requests.get("https://www.bing.cn")
+response = requests.get("https://www.bing.com")
 
 print(response.content.decode())
