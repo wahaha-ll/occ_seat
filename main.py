@@ -1,3 +1,3 @@
 import requests
 
-requests.get("https://pic.netbian.com/")
+requests.get("https://www.swfu.edu.cn/")
